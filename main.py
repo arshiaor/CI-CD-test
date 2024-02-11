@@ -4,7 +4,7 @@ import time,datetime,pytz
 from prettytable import PrettyTable
 from bs4 import BeautifulSoup
 from selenium.webdriver.chrome.service import Service as ChromeService
-from telethon import TelegramClient,events
+
 
 bot_token="6680273534:AAF1R3ieOUC4SdTog-hmFfT8f38VH8UY5Cs"
 chat_id="-1002034419658"
