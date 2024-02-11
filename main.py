@@ -41,7 +41,7 @@ max_length=0
 max_name=''
 
 title="     Currency     "+" "*4 + "   sell   " + " "*4 + "   Buy   "+" "*4 +"\n"
-# dashes="-"*(len(title)-5) + "\n"
+# dashes="-"*(len(title)-5) + "\n" for beauty
 test_table= title+"\n"
 
 for table in currency_table:
