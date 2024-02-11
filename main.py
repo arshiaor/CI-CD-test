@@ -82,10 +82,7 @@ for table in currency_table:
 
 
 
-bot_token="6680273534:AAF1R3ieOUC4SdTog-hmFfT8f38VH8UY5Cs"
-chat_id="-1002034419658"
-api_id="1082319"
-api_hash="c778e52f3aa8904729c37d8723fc85e4"
+
 markdown_table =f"Currency Exchange Rates in: {time_extracted.strftime('%Y-%m-%d %H:%M:%S')}"+"\n"+str(test_table)
 url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
 
