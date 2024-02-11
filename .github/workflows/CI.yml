@@ -50,9 +50,5 @@ jobs:
         username: ${{ secrets.DC_USER }}
         password: ${{ secrets.DC_PASS }}
         port: ${{ secrets.DC_PORT }}
-        script: |
-            cd ~/auto/CI-CD-test
-            kill -9 $(cat ~/run.pid)
-            git pull origin master
-            nohup python3 main.py > /dev/null 2>&1 & echo $! > run.pid
+        script: ~/test
     
