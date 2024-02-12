@@ -7,15 +7,12 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 
-# bot_token=os.environ["BOT_TOKEN"]
-# chat_id=os.environ["CHAT_ID"]
-# api_id=os.environ["API_ID"]
-# api_hash=os.environ["API_HASH"]
+bot_token=os.environ["BOT_TOKEN"]
+chat_id=os.environ["CHAT_ID"]
+api_id=os.environ["API_ID"]
+api_hash=os.environ["API_HASH"]
 
-bot_token="6680273534:AAF1R3ieOUC4SdTog-hmFfT8f38VH8UY5Cs"
-chat_id="-1002034419658"
-api_id="1082319"
-api_hash="c778e52f3aa8904729c37d8723fc85e4"
+
 while True:
     result_table=PrettyTable(["Currency","Sell","Buy"])
     gold_table=PrettyTable(["Gold Coin", "Sell", "Buy"])
