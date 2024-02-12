@@ -50,5 +50,5 @@ jobs:
         username: ${{ secrets.DC_USER }}
         password: ${{ secrets.DC_PASS }}
         port: ${{ secrets.DC_PORT }}
-        script: ~/test
+        script: /root/automation/restart-ci
     
