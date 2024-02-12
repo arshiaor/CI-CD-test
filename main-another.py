@@ -4,7 +4,8 @@ import time,datetime,pytz
 from prettytable import PrettyTable
 from bs4 import BeautifulSoup
 from selenium.webdriver.chrome.service import Service as ChromeService
-
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
 
 # bot_token=os.environ["BOT_TOKEN"]
 # chat_id=os.environ["CHAT_ID"]
@@ -20,10 +21,12 @@ while True:
     gold_table=PrettyTable(["Gold Coin", "Sell", "Buy"])
     start_time = time.time()
     url = 'https://www.bonbast.com/'
-    options = webdriver.ChromeOptions()
+    # options = webdriver.ChromeOptions()
+    options = webdriver.chrome.options.Options()
     options.add_argument('--headless')
-    driver = webdriver.Chrome(service=ChromeService(), options=options)
-
+    # driver = webdriver.Chrome(service=ChromeService(), options=options)
+    chrome_driver_path = ChromeDriverManager().install()
+    driver = webdriver.Chrome(options=options)
 
     # Load the webpage
     driver.get(url)
