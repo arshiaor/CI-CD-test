@@ -102,4 +102,4 @@ while True:
 
     response = requests.post(url, params=params)
     print("sleeping")
-    time.sleep(10)
+    time.sleep(600)
