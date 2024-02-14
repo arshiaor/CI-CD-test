@@ -43,19 +43,5 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
     
-  publish:
 
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v3
-    - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@v1.0.3
-      with:
-        host: ${{ secrets.DC_HOST }}
-        username: ${{ secrets.DC_USER }}
-        password: ${{ secrets.DC_PASS }}
-        port: ${{ secrets.DC_PORT }}
-        script: /root/automation/restart-ci
     
