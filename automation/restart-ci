@@ -8,7 +8,7 @@ echo "nohup process killed"
 
 echo "pulling new code from github"
 git clone https://github.com/arshiaor/CI-CD-test.git
-echo "pull done"
+echo "pull done!"
 
 echo "restarting nohup with new changes"
 nohup venv/bin/python3 main.py > /root/automation/output.log 2> /dev/null &
