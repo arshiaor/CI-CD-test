@@ -6,9 +6,10 @@ echo "nohup process killed"
 
 
 
-#echo "pulling new code from github"
-#git pull
-#echo "pull done"
+echo "pulling new code from github"
+git remote add origin 'https://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@github.com/arshiaor/CI-CD-test.git'
+git pull
+echo "pull done"
 
 echo "restarting nohup with new changes"
 nohup venv/bin/python3 main.py > /root/automation/output.log 2> /dev/null &
