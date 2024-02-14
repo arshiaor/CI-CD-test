@@ -19,9 +19,6 @@ COPY /usr/bin/chromedriver /usr/bin/chromedriver
 # Make chromedriver executable (if needed)
 RUN chmod +x /usr/bin/chromedriver
 
-# Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
-
 # Define environment variable
 ENV PATH="/usr/bin/chromedriver:${PATH}"
 
