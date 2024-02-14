@@ -1,0 +1,17 @@
+#!/bin/bash
+PID=$(cat /root/automation/run.pid)
+echo "killing the existing nohup process"
+kill -9 $PID
+echo "nohup process killed"
+
+
+
+echo "pulling new code from github"
+git pull
+echo "pull done"
+
+echo "restarting nohup with new changes"
+nohup venv/bin/python3 main.py > /root/automation/output.log 2> /dev/null &
+
+echo $! > /root/automation/run.pid
+echo " nohup started with PID: $!"
