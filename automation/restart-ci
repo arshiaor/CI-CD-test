@@ -7,8 +7,7 @@ echo "nohup process killed"
 
 
 echo "pulling new code from github"
-git remote add origin 'https://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@github.com/arshiaor/CI-CD-test.git'
-git pull
+git clone https://github.com/arshiaor/CI-CD-test.git
 echo "pull done"
 
 echo "restarting nohup with new changes"
