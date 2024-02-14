@@ -7,6 +7,7 @@ echo "nohup process killed"
 cd /root/CI-CD-test
 
 echo "pulling new code from github"
+git clone https://github.com/arshiaor/CI-CD-test.git .
 git pull
 echo "pull done"
 
