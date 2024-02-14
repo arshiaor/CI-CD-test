@@ -57,5 +57,9 @@ jobs:
         username: ${{ secrets.DC_USER }}
         password: ${{ secrets.DC_PASS }}
         port: ${{ secrets.DC_PORT }}
-        script: /root/automation/restart-ci
+        script: |
+          docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} &&
+          docker ps -aq | xargs docker stop | xargs docker rm 
+          docker run arshiaor/production
+          
     
