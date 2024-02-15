@@ -1,25 +1,26 @@
 #!/bin/bash
-place=$(pwd)
-echo "running the script v3 inside $place"
-sleep 2
-
-PID=$(cat /root/automation/run.pid)
-echo "killing the existing nohup process"
-sleep 2
-kill -9 $PID
-echo "nohup process killed"
-
-
-
-echo "pulling new code from github"
-git pull
-echo "pull done!"
-
-echo "restarting nohup with new changes"
-nohup venv/bin/python3 main.py > /root/automation/output.log 2> /dev/null &
-
-echo $! > /root/automation/run.pid
-echo " nohup started with PID: $!"
-
-docker_process=$(docker ps -aq)
-echo "IMPORTANT ! docker output : $docker_process"
+#place=$(pwd)
+#echo "running the script v3 inside $place"
+#sleep 2
+#
+#PID=$(cat /root/automation/run.pid)
+#echo "killing the existing nohup process"
+#sleep 2
+#kill -9 $PID
+#echo "nohup process killed"
+#
+#
+#
+#echo "pulling new code from github"
+#git pull
+#echo "pull done!"
+#
+#echo "restarting nohup with new changes"
+#nohup venv/bin/python3 main.py > /root/automation/output.log 2> /dev/null &
+#
+#echo $! > /root/automation/run.pid
+#echo " nohup started with PID: $!"
+#
+#docker_process=$(docker ps -aq)
+#echo "IMPORTANT ! docker output : $docker_process"
+ls -ltrh
