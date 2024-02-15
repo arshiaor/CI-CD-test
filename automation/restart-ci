@@ -1,5 +1,13 @@
 #!/bin/bash
+
 place=$(pwd)
+echo "Installing requirements.txt"
+# Install requirements in the virtual environment
+source venv/bin/activate  # Activate the virtual environment
+pip install -r requirements.txt
+deactivate  # Deactivate the virtual environment
+
+
 echo "running the script v4 inside $place"
 sleep 2
 
