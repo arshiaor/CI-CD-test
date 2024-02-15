@@ -3,7 +3,7 @@ FROM python:3.10
 
 # Install Git
 RUN apt-get update && apt-get install -y git
-RUN apt-get install -y docker.io
+
 
 # Set the working directory in the container
 WORKDIR /root/CI-CD-TEST
@@ -12,20 +12,25 @@ WORKDIR /root/CI-CD-TEST
 COPY . /root/CI-CD-TEST
 
 # Copy the automation scripts into the container
-COPY automation/ /root/automation/
-
-# Copy chromedriver to the desired location in the container
-COPY chromedriver /usr/bin/chromedriver
+#COPY automation/ /root/automation/
+#
+## Copy chromedriver to the desired location in the container
+#COPY chromedriver /usr/bin/chromedriver
 
 # Make chromedriver executable (if needed)
-RUN chmod +x /usr/bin/chromedriver
-RUN chmod +x ./automation/restart-ci
-
-RUN chmod +x /root/automation/restart-ci
-
+#RUN chmod +x /usr/bin/chromedriver
+#RUN chmod +x ./automation/restart-ci
+#
+#RUN chmod +x /root/automation/restart-ci
+CMD ["/bin/bash", "-c","cp chromedriver /usr/bin/chromedriver"]
+CMD ["/bin/bash", "-c","chmod +x /usr/bin/chromedriver"]
 # Define environment variable
 ENV PATH="/usr/bin/chromedriver:${PATH}"
 
 # Run the restart-ci script when the container launches
+CMD ["/bin/bash", "-c","mkdir /root/automation"]
+CMD ["/bin/bash", "-c","mv -r automation/ /root/automation"]
+CMD ["/bin/bash", "-c","chmod +x /root/automation"]
+
 
 CMD ["/bin/bash", "-c", "/root/automation/restart-ci"]
