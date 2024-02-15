@@ -23,7 +23,7 @@ while True:
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument('--headless')
     # driver = webdriver.Chrome(service=ChromeService(), options=options)
-    chrome_driver_path = ChromeDriverManager().install()
+    # chrome_driver_path = ChromeDriverManager().install()
     driver = webdriver.Chrome(options=options)
 
     # Load the webpage
@@ -98,8 +98,8 @@ while True:
     #     "text": markdown_table,
     #     "parse_mode": "markdown"
     # }
-    #
+
     # response = requests.post(url, params=params)
-    # print("sleeping")
+    print("sleeping")
     # time.sleep(600)
     time.sleep(120)
