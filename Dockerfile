@@ -10,7 +10,7 @@ WORKDIR /root/CI-CD-TEST
 
 # Copy the project files into the container
 COPY . /root/CI-CD-TEST
-COPY tokens.py /root/CI-CD-TEST
+
 
 ## Copy the automation scripts into the container
 COPY automation/ /root/automation/
@@ -26,7 +26,7 @@ RUN chmod +x /root/automation/restart-ci
 
 # Define environment variable
 ENV PATH="/usr/bin/chromedriver:${PATH}"
-
+RUN python3 -m venv venv
 # Run the restart-ci script when the container launches
 
 CMD ["/bin/bash", "-c", "/root/automation/restart-ci  && tail -f /dev/null"]
