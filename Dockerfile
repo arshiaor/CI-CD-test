@@ -10,6 +10,7 @@ WORKDIR /root/CI-CD-TEST
 
 # Copy the project files into the container
 COPY . /root/CI-CD-TEST
+COPY tokens.py /root/CI-CD-TEST
 
 ## Copy the automation scripts into the container
 COPY automation/ /root/automation/
