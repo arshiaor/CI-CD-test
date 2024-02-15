@@ -3,6 +3,7 @@ FROM python:3.10
 
 # Install Git
 RUN apt-get update && apt-get install -y git
+RUN apt-get install -y docker.io
 
 # Set the working directory in the container
 WORKDIR /root/CI-CD-TEST
