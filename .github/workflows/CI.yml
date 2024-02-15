@@ -48,6 +48,12 @@ jobs:
 
     needs: build
     runs-on: ubuntu-latest
+    services:
+      docker:
+        image: docker:25.0.3-dind
+        options: --privileged  # Required for Docker-in-Docker
+        ports:
+          - 2375:2375  # Expose Docker daemon port
 
     steps:
     - uses: actions/checkout@v3

@@ -23,4 +23,9 @@
 #
 #docker_process=$(docker ps -aq)
 #echo "IMPORTANT ! docker output : $docker_process"
-ls -ltrh
+echo "I am inside $(pwd) \n"
+
+echo "files in this directory: $(ls -ltrh)"
+
+
+echo "docker processes: $(docker ps -aq)"
