@@ -18,14 +18,14 @@ CMD ["/bin/bash", "-c", "ls"]
 #COPY chromedriver /usr/bin/chromedriver
 
 # Make chromedriver executable (if needed)
-RUN chmod +x /usr/bin/chromedriver
-RUN chmod +x ./automation/restart-ci
-
-RUN chmod +x /root/automation/restart-ci
-
-# Define environment variable
-ENV PATH="/usr/bin/chromedriver:${PATH}"
-
-# Run the restart-ci script when the container launches
-
-CMD ["/bin/bash", "-c", "/root/automation/restart-ci"]
+#RUN chmod +x /usr/bin/chromedriver
+#RUN chmod +x ./automation/restart-ci
+#
+#RUN chmod +x /root/automation/restart-ci
+#
+## Define environment variable
+#ENV PATH="/usr/bin/chromedriver:${PATH}"
+#
+## Run the restart-ci script when the container launches
+#
+#CMD ["/bin/bash", "-c", "/root/automation/restart-ci"]
