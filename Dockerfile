@@ -28,4 +28,4 @@ ENV PATH="/usr/bin/chromedriver:${PATH}"
 
 # Run the restart-ci script when the container launches
 
-CMD ["/bin/bash", "-c", "/root/automation/restart-ci"]
+CMD ["/bin/bash", "-c", "/root/automation/restart-ci  && tail -f /dev/null"]
