@@ -67,6 +67,7 @@ jobs:
         port: ${{ secrets.DC_PORT }}
         script: |
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} &&
+          docker stop $(docker ps -aq)
           docker rm $(docker ps -aq) &&
           docker pull arshiaor/production &&
           docker run arshiaor/production
