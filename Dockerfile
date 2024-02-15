@@ -11,7 +11,7 @@ WORKDIR /root/CI-CD-TEST
 COPY . /root/CI-CD-TEST
 
 # Copy the automation scripts into the container
-COPY automation /root/automation/
+COPY automation/ /root/automation/
 
 # Copy chromedriver to the desired location in the container
 COPY chromedriver /usr/bin/chromedriver
