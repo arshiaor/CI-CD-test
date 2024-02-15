@@ -1,15 +1,18 @@
 #!/bin/bash
 place=$(pwd)
 echo "running the script inside $place"
+sleep 2
+
 PID=$(cat /root/automation/run.pid)
 echo "killing the existing nohup process"
+sleep 2
 kill -9 $PID
 echo "nohup process killed"
 
 
 
 echo "pulling new code from github"
-git clone https://github.com/arshiaor/CI-CD-test.git
+git pull
 echo "pull done!"
 
 echo "restarting nohup with new changes"
