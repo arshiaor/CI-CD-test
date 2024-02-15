@@ -1,5 +1,5 @@
 #!/bin/bash
-echo " line : $(head -n 5 automation/restart-ci)"
+echo " line $(head -n 5 automation/restart-ci)"
 
 place=$(pwd)
 echo "running the script v4 inside $place"
