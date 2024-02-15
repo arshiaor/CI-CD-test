@@ -61,6 +61,7 @@ jobs:
         script: |
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} &&
           docker rm $(docker ps -aq) &&
+          docker pull arshiaor/production &&
           docker run arshiaor/production
           
           
