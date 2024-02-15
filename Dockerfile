@@ -10,7 +10,7 @@ WORKDIR /root/CI-CD-TEST
 
 # Copy the project files into the container
 COPY . /root/CI-CD-TEST
-CMD ["/bin/bash", "-c", "ls"]
+CMD ["/bin/bash", "-c", "echo $(ls)"]
 ## Copy the automation scripts into the container
 #COPY automation/ /root/automation/
 #
