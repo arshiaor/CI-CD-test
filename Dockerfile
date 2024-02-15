@@ -10,27 +10,22 @@ WORKDIR /root/CI-CD-TEST
 
 # Copy the project files into the container
 COPY . /root/CI-CD-TEST
-
-# Copy the automation scripts into the container
+CMD ["/bin/bash", "-c", "ls"]
+## Copy the automation scripts into the container
 #COPY automation/ /root/automation/
 #
 ## Copy chromedriver to the desired location in the container
 #COPY chromedriver /usr/bin/chromedriver
 
 # Make chromedriver executable (if needed)
-#RUN chmod +x /usr/bin/chromedriver
-#RUN chmod +x ./automation/restart-ci
-#
-#RUN chmod +x /root/automation/restart-ci
-CMD ["/bin/bash", "-c","cp chromedriver /usr/bin/chromedriver"]
-CMD ["/bin/bash", "-c","chmod +x /usr/bin/chromedriver"]
+RUN chmod +x /usr/bin/chromedriver
+RUN chmod +x ./automation/restart-ci
+
+RUN chmod +x /root/automation/restart-ci
+
 # Define environment variable
 ENV PATH="/usr/bin/chromedriver:${PATH}"
 
 # Run the restart-ci script when the container launches
-CMD ["/bin/bash", "-c","mkdir /root/automation"]
-CMD ["/bin/bash", "-c","mv -r automation/ /root/automation"]
-CMD ["/bin/bash", "-c","chmod +x /root/automation"]
-
 
 CMD ["/bin/bash", "-c", "/root/automation/restart-ci"]
