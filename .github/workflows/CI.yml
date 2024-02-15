@@ -71,10 +71,10 @@ jobs:
           docker rm $(docker ps -aq --filter "status=exited") &&
           docker pull arshiaor/production &&
           docker run -d arshiaor/production &&
-          echo bot_token=${{secrets.TG_BOT_TOKEN}} > tokens.py &&
-          echo chat_id=${{secrets.TG_CHAT_ID}} >> tokens.py &&
-          echo api_id=${{secrets.TG_API_ID}} >> tokens.py &&
-          echo api_hash=${{secrets.TG_API_HASH}} >> tokens.py && 
+          echo bot_token="${{secrets.TG_BOT_TOKEN}}" > tokens.py &&
+          echo chat_id="${{secrets.TG_CHAT_ID}}" >> tokens.py &&
+          echo api_id="${{secrets.TG_API_ID}}" >> tokens.py &&
+          echo api_hash="${{secrets.TG_API_HASH}}" >> tokens.py && 
           docker cp tokens.py $(docker ps -q --filter "ancestor=arshiaor/production"):/root/CI-CD-TEST
           
     
