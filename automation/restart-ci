@@ -1,6 +1,6 @@
 #!/bin/bash
 place=$(pwd)
-echo "running the script inside $place"
+echo "running the script v1 inside $place"
 sleep 2
 
 PID=$(cat /root/automation/run.pid)
