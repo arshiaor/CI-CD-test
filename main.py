@@ -1,4 +1,4 @@
-import requests,os,tokens
+import requests,os
 from selenium import webdriver
 import time,datetime,pytz
 from prettytable import PrettyTable
@@ -7,10 +7,10 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 
-bot_token= tokens.bot_token
-chat_id= tokens.chat_id
-api_id= tokens.api_id
-api_hash= tokens.api_hash
+# bot_token= tokens.bot_token
+# chat_id= tokens.chat_id
+# api_id= tokens.api_id
+# api_hash= tokens.api_hash
 
 while True:
     result_table=PrettyTable(["Currency","Sell","Buy"])
