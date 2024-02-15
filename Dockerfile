@@ -3,6 +3,7 @@ FROM python:3.10
 
 # Install Git
 RUN apt-get update && apt-get install -y git
+RUN apt install libnss3 libnss-util3 libnspr4
 
 
 # Set the working directory in the container
@@ -17,9 +18,11 @@ COPY automation/ /root/automation/
 #
 ## Copy chromedriver to the desired location in the container
 COPY chromedriver /usr/bin/chromedriver
+COPY chromedriver /usr/local/bin/chromedriver
 
 # Make chromedriver executable (if needed)
 RUN chmod +x /usr/bin/chromedriver
+RUN chmod +x /usr/local/bin/chromedriver
 RUN chmod +x ./automation/restart-ci
 
 RUN chmod +x /root/automation/restart-ci
