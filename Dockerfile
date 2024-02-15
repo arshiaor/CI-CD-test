@@ -3,7 +3,7 @@ FROM python:3.10
 
 # Install Git
 RUN apt-get update && apt-get install -y git
-#RUN apt install libnss3 libnss-util3 libnspr4
+
 
 
 # Set the working directory in the container
@@ -33,4 +33,5 @@ RUN python3 -m venv venv
 # Run the restart-ci script when the container launches
 
 CMD ["/bin/bash", "-c", "apt-get update && apt-get upgrade -y"]
+CMD ["/bin/bash", "-c", "apt-get install -y chromium"]
 CMD ["/bin/bash", "-c", "/root/automation/restart-ci  && tail -f /dev/null"]

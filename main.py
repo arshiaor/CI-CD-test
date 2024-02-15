@@ -1,4 +1,4 @@
-import requests,os
+import requests,os,tokens
 from selenium import webdriver
 import time,datetime,pytz
 from prettytable import PrettyTable
@@ -7,10 +7,10 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 
-# bot_token= tokens.bot_token
-# chat_id= tokens.chat_id
-# api_id= tokens.api_id
-# api_hash= tokens.api_hash
+bot_token= tokens.bot_token
+chat_id= tokens.chat_id
+api_id= tokens.api_id
+api_hash= tokens.api_hash
 
 while True:
     result_table=PrettyTable(["Currency","Sell","Buy"])
@@ -90,16 +90,16 @@ while True:
 
 
 
-    # markdown_table =f"Currency Exchange Rates in: {time_extracted.strftime('%Y-%m-%d %H:%M:%S')}"+"\n\n"+str(test_table)
-    # url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-    #
-    # params = {
-    #     "chat_id": chat_id,
-    #     "text": markdown_table,
-    #     "parse_mode": "markdown"
-    # }
+    markdown_table =f"Currency Exchange Rates in: {time_extracted.strftime('%Y-%m-%d %H:%M:%S')}"+"\n\n"+str(test_table)
+    url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
 
-    # response = requests.post(url, params=params)
+    params = {
+        "chat_id": chat_id,
+        "text": markdown_table,
+        "parse_mode": "markdown"
+    }
+
+    response = requests.post(url, params=params)
     print("sleeping")
     # time.sleep(600)
     time.sleep(120)

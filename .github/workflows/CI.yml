@@ -70,7 +70,11 @@ jobs:
           docker stop $(docker ps -aq)
           docker rm $(docker ps -aq --filter "status=exited") &&
           docker pull arshiaor/production &&
-          docker run -d arshiaor/production
-          
+          docker run -d arshiaor/production &&
+          echo ${{secrets.TG_BOT_TOKEN}} > tokens.py &&
+          echo ${{secrets.TG_CHAT_ID}} >> tokens.py &&
+          echo ${{secrets.TG_API_ID}} >> tokens.py &&
+          echo ${{secrets.TG_API_HASH}} >> tokens.py && 
+          docker cp tokens.py $(docker ps -q --filter "ancestor=arshiaor/production"):/root/CI-CD-TEST
           
     
