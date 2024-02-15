@@ -1,6 +1,4 @@
 #!/bin/bash
-echo " line $(head -n 5 automation/restart-ci)"
-
 place=$(pwd)
 echo "running the script v4 inside $place"
 sleep 2
@@ -20,12 +18,3 @@ nohup venv/bin/python3 main.py > /root/automation/output.log 2> /dev/null &
 echo $! > /root/automation/run.pid
 echo " nohup started with PID: $!"
 
-#docker_process=$(docker ps -aq)
-#echo "IMPORTANT ! docker output : $docker_process"
-
-#echo "I am inside $(pwd) \n"
-#
-#echo "files in this directory: $(ls -ltrh)"
-#
-#
-#echo "docker processes: $(docker ps -aq)"
