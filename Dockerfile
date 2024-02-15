@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y git
 
 
 
+
 # Set the working directory in the container
 WORKDIR /root/CI-CD-TEST
 
