@@ -33,5 +33,5 @@ RUN python3 -m venv venv
 # Run the restart-ci script when the container launches
 
 CMD ["/bin/bash", "-c", "apt-get update && apt-get upgrade -y"]
-CMD ["/bin/bash", "-c", "apt-get install -y chromium"]
+
 CMD ["/bin/bash", "-c", "/root/automation/restart-ci  && tail -f /dev/null"]

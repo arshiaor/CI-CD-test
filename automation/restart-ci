@@ -5,6 +5,7 @@ echo "Installing requirements.txt"
 # Install requirements in the virtual environment
 source venv/bin/activate  # Activate the virtual environment
 pip install -r requirements.txt
+apt-get install -y chromium
 deactivate  # Deactivate the virtual environment
 
 
