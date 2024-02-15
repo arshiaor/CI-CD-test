@@ -90,16 +90,16 @@ while True:
 
 
 
-    markdown_table =f"Currency Exchange Rates in: {time_extracted.strftime('%Y-%m-%d %H:%M:%S')}"+"\n\n"+str(test_table)
-    url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-
-    params = {
-        "chat_id": chat_id,
-        "text": markdown_table,
-        "parse_mode": "markdown"
-    }
-
-    response = requests.post(url, params=params)
-    print("sleeping")
+    # markdown_table =f"Currency Exchange Rates in: {time_extracted.strftime('%Y-%m-%d %H:%M:%S')}"+"\n\n"+str(test_table)
+    # url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
+    #
+    # params = {
+    #     "chat_id": chat_id,
+    #     "text": markdown_table,
+    #     "parse_mode": "markdown"
+    # }
+    #
+    # response = requests.post(url, params=params)
+    # print("sleeping")
     # time.sleep(600)
     time.sleep(120)
