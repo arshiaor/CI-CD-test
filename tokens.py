@@ -1,1 +1,1 @@
-# ddsh zadi be kahdoon :smirk: :+1:
+# ddsh zadi be kahdoon ;)
