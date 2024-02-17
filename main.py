@@ -47,7 +47,9 @@ while True:
             file.close()
     finally:
         try:
+            driver.close()
             driver.quit()
+
         except:
             pass
 
