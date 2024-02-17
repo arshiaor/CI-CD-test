@@ -1,4 +1,4 @@
-import requests,os,tokens
+import requests,os,tokens,psutil
 from selenium import webdriver
 import time,datetime,pytz
 from prettytable import PrettyTable
@@ -52,6 +52,20 @@ while True:
         try:
             driver.quit()
         except:
+            pass
+
+    # Get a list of all processes
+    all_processes = psutil.process_iter()
+
+    # Iterate over each process
+    for process in all_processes:
+        try:
+            # Check if the process name contains 'chromium' and it is in a defunct state
+            if 'chromium' in process.name().lower() and process.status() == psutil.STATUS_ZOMBIE:
+                # Terminate the process
+                process.terminate()
+        except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+            # Ignore exceptions raised for processes that no longer exist or cannot be accessed
             pass
 
     currency_table = soup.find_all('table', class_='table-condensed')
