@@ -39,9 +39,6 @@ while True:
         page_source = driver.page_source
 
         # Close the browser
-
-
-
     # Parse the page source with BeautifulSoup
         soup = BeautifulSoup(page_source, 'html.parser')
     except Exception as e:
@@ -61,7 +58,7 @@ while True:
     for process in all_processes:
         try:
             # Check if the process name contains 'chromium' and it is in a defunct state
-            if 'chromium' in process.name().lower() and process.status() == psutil.STATUS_ZOMBIE:
+            if 'chromium' in process.name().lower():
                 # Terminate the process
                 process.terminate()
         except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
