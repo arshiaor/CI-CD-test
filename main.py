@@ -24,24 +24,35 @@ while True:
     options.add_argument('--headless')
     # driver = webdriver.Chrome(service=ChromeService(), options=options)
     # chrome_driver_path = ChromeDriverManager().install()
-    driver = webdriver.Chrome(options=options)
+    try:
+        driver = webdriver.Chrome(options=options)
 
-    # Load the webpage
-    driver.get(url)
-    time_extracted = datetime.datetime.now(pytz.timezone('Asia/Tehran'))
-    print(f"Time in IRST format when data is extracted: {time_extracted.strftime('%Y-%m-%d %H:%M:%S')}")
-    # Wait for a few seconds to ensure JavaScript has loaded
-    # driver.implicitly_wait(5)
+        # Load the webpage
+        driver.get(url)
+        time.sleep(5)
+        time_extracted = datetime.datetime.now(pytz.timezone('Asia/Tehran'))
+        print(f"Time in IRST format when data is extracted: {time_extracted.strftime('%Y-%m-%d %H:%M:%S')}")
+        # Wait for a few seconds to ensure JavaScript has loaded
+        # driver.implicitly_wait(5)
 
-    # Get the page source after JavaScript execution
-    page_source = driver.page_source
+        # Get the page source after JavaScript execution
+        page_source = driver.page_source
 
-    # Close the browser
-    driver.quit()
+        # Close the browser
+
 
 
     # Parse the page source with BeautifulSoup
-    soup = BeautifulSoup(page_source, 'html.parser')
+        soup = BeautifulSoup(page_source, 'html.parser')
+    except Exception as e:
+        with open("output.txt", "w") as file:
+            file.write(str(e))
+            file.close()
+    finally:
+        try:
+            driver.quit()
+        except:
+            pass
 
     currency_table = soup.find_all('table', class_='table-condensed')
     max_length=0
